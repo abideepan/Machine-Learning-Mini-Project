@@ -1,0 +1,118 @@
+body {
+    text-align: center;
+    background: black;
+    color: white;
+}
+
+#stage {
+    width: 500px;
+    height: 300px;
+    border: 2px solid white;
+    margin: auto;
+    position: relative;
+}
+
+/* Robot */
+.robot {
+    width: 50px;
+    height: 110px;
+    position: absolute;
+}
+
+/* Head */
+.head {
+    width: 30px;
+    height: 30px;
+    background: cyan;
+    margin: auto;
+    position: relative;
+}
+
+/* Face */
+.eye {
+    width: 5px;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: 8px;
+}
+
+.eye.left { left: 6px; }
+.eye.right { right: 6px; }
+
+.mouth {
+    width: 10px;
+    height: 3px;
+    background: black;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+
+/* Body */
+.body {
+    width: 40px;
+    height: 30px;
+    background: blue;
+    margin: auto;
+    position: relative;
+}
+
+/* Hands */
+.hand {
+    width: 8px;
+    height: 30px;
+    background: orange;
+    position: absolute;
+    top: 0;
+}
+
+.hand.left { left: -10px; }
+.hand.right { right: -10px; }
+
+/* Legs */
+.leg {
+    width: 8px;
+    height: 30px;
+    background: lime;
+    position: absolute;
+    bottom: 0;
+}
+
+.leg.left { left: 10px; }
+.leg.right { right: 10px; }
+
+/* Dance */
+.dance {
+    animation: jump 0.5s infinite alternate;
+}
+
+/* Animations */
+@keyframes jump {
+    from { transform: translateY(0); }
+    to { transform: translateY(-15px); }
+}
+
+/* Hand wave */
+.dance .hand {
+    animation: wave 0.3s infinite alternate;
+}
+
+@keyframes wave {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(40deg); }
+}
+
+/* Leg move */
+.dance .leg.left {
+    animation: legMove 0.3s infinite alternate;
+}
+
+.dance .leg.right {
+    animation: legMove 0.3s infinite alternate-reverse;
+}
+
+@keyframes legMove {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(30deg); }
+}
